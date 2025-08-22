@@ -27,4 +27,115 @@
 
     .main-stream {
       margin: 20px auto;
-      width: 80
+      width: 80%;
+    }
+
+    .streamers {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+      animation: slideUp 1s ease-out;
+      flex-wrap: wrap;
+    }
+
+    .streamer {
+      width: 200px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .streamer img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .streamer:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+    }
+
+    #countdown {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @media (max-width: 600px) {
+      .streamers {
+        flex-direction: column;
+        align-items: center;
+      }
+      .streamer {
+        width: 80%;
+        margin-bottom: 20px;
+      }
+      .main-stream iframe {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎮 TLNG Squad Stream</h1>
+  <div id="countdown"></div>
+
+  <!-- Main Stream Embed -->
+  <div class="main-stream">
+    <iframe
+      src="https://player.twitch.tv/?channel=heatcertifiedtv&parent=mfrancis415.github.io"
+      frameborder="0"
+      allowfullscreen="true"
+      scrolling="no"
+      height="480"
+      width="854">
+    </iframe>
+  </div>
+
+  <!-- Other Streamers -->
+  <div class="streamers">
+    <div class="streamer">
+      <a href="https://m.twitch.tv/tlnggarrnet237/home?tt_content=channel&tt_medium=mobile_web_share" target="_blank">
+        <img src="tlnggarrnet237.jpg" alt="TLNG Garrnet">
+      </a>
+    </div>
+    <!-- Add more streamers here -->
+  </div>
+
+  <script>
+    // Countdown Timer
+    const countdownElement = document.getElementById('countdown');
+    const targetDate = new Date("August 22, 2025 20:00:00").getTime(); // 8 PM EDT
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        countdownElement.innerHTML = "🎉 We're live now!";
+        return;
+      }
+
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownElement.innerHTML = `⏳ Next stream starts in ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    setInterval(updateCountdown, 1000);
+  </script>
+
+</body>
+</html>
