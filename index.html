@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Heat Certified</title>
+  <title>TLNG Squad Stream</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Google Fonts -->
@@ -10,28 +10,21 @@
 
   <style>
     body {
-  margin: 0;
-  font-family: 'Anton', sans-serif;
-  background-color: #121212;
-  color: #FFD700;
-  text-align: center;
-  transition: background-color 0.5s ease, color 0.5s ease;
-}
+      margin: 0;
+      font-family: 'Anton', sans-serif;
+      background-color: #121212;
+      color: #FFD700;
+      text-align: center;
+      transition: background-color 0.5s ease, color 0.5s ease;
+    }
 
-.logo-container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 20px;
-}
+    h1 {
+      font-family: 'Brusher', cursive;
+      font-size: 3em;
+      margin-top: 20px;
+      animation: fadeIn 1s ease-in;
+    }
 
-.logo {
-  max-width: 180px;
-  height: auto;
-  animation: fadeIn 1s ease-in;
-}
-
-}
     .main-stream {
       margin: 20px auto;
       width: 80%;
@@ -61,19 +54,6 @@
       transform: scale(1.08);
       box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
     }
-.photo-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background-color: black;
-}
-
-.photo-row img {
-  max-width: 22%;
-  height: auto;
-  border-radius: 8px;
-}
 
     #countdown {
       font-size: 1.2em;
@@ -108,30 +88,28 @@
 </head>
 <body>
 
-  <h1>
-    <div class="logo-container">
-  <img src="logo.png" alt="TLNG Logo" class="logo">
-</div>
-  </h1>
+  <h1>🎮 TLNG Squad Stream</h1>
   <div id="countdown"></div>
 
   <!-- Main Stream Embed -->
- <!-- Photo Row -->
-<div class="photo-row">
-  <img src="tlnggarrnet237.jpg" alt="Photo 1">
-  <img src="tlnggarrnet237.jpg" alt="Photo 2">
-  <img src="tlnggarrnet237.jpg" alt="Photo 3">
-  <img src="tlnggarrnet237.jpg" alt="Photo 4">
-</div>
+  <div class="main-stream">
+    <iframe
+      src="https://player.twitch.tv/?channel=heatcertifiedtv&parent=mfrancis415.github.io"
+      frameborder="0"
+      allowfullscreen="true"
+      scrolling="no"
+      height="480"
+      width="854">
+    </iframe>
+  </div>
 
-<!-- Streamers List -->
-<ul class="streamers-list">
-  <li><a href="https://m.twitch.tv/tlnggarrnet237/" target="_blank">Streamer 1</a></li>
-  <li><a href="https://m.twitch.tv/tlnggarrnet237/" target="_blank">Streamer 2</a></li>
-  <li><a href="https://m.twitch.tv/tlnggarrnet237/" target="_blank">Streamer 3</a></li>
-  <li><a href="https://m.twitch.tv/tlnggarrnet237/" target="_blank">Streamer 4</a></li>
-</ul>
-
+  <!-- Other Streamers -->
+  <div class="streamers">
+    <div class="streamer">
+      <a href="https://m.twitch.tv/tlnggarrnet237/home?tt_content=channel&tt_medium=mobile_web_share" target="_blank">
+        <img src="tlnggarrnet237.jpg" alt="TLNG Garrnet">
+      </a>
+    </div>
     <!-- Add more streamers here -->
   </div>
 
@@ -161,12 +139,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
