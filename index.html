@@ -61,6 +61,19 @@
       transform: scale(1.08);
       box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
     }
+.photo-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: black;
+}
+
+.photo-row img {
+  max-width: 22%;
+  height: auto;
+  border-radius: 8px;
+}
 
     #countdown {
       font-size: 1.2em;
@@ -103,45 +116,22 @@
   <div id="countdown"></div>
 
   <!-- Main Stream Embed -->
-  <div class="main-stream">
-    <iframe
-      src="https://player.twitch.tv/?channel=heatcertifiedtv&parent=mfrancis415.github.io"
-      frameborder="0"
-      allowfullscreen="true"
-      scrolling="no"
-      height="480"
-      width="854">
-    </iframe>
-  </div>
+ <!-- Photo Row -->
+<div class="photo-row">
+  <img src="tlnggarrnet237.jpg" alt="Photo 1">
+  <img src="tlnggarrnet237.jpg" alt="Photo 2">
+  <img src="tlnggarrnet237.jpg" alt="Photo 3">
+  <img src="tlnggarrnet237.jpg" alt="Photo 4">
+</div>
 
-  <!-- Other Streamers -->
-  <div class="streamers">
-    <div class="streamer">
-      <a href="https://m.twitch.tv/tlnggarrnet237/home?tt_content=channel&tt_medium=mobile_web_share" target="_blank">
-        <img src="tlnggarrnet237.jpg" alt="TLNG Garrnet">
-      </a>
-    </div>
+<!-- Streamers List -->
+<ul class="streamers-list">
+  <li><a href="https://m.twitch.tv/tlnggarrnet237/" target="_blank">Streamer 1</a></li>
+  <li><a href="https://m.twitch.tv/tlnggarrnet237/" target="_blank">Streamer 2</a></li>
+  <li><a href="https://m.twitch.tv/tlnggarrnet237/" target="_blank">Streamer 3</a></li>
+  <li><a href="https://m.twitch.tv/tlnggarrnet237/" target="_blank">Streamer 4</a></li>
+</ul>
 
-    <div class="streamers">
-    <div class="streamer">
-      <a href="https://m.twitch.tv/tlnggarrnet237/home?tt_content=channel&tt_medium=mobile_web_share" target="_blank">
-        <img src="tlnggarrnet237.jpg" alt="TLNG Garrnet">
-      </a>
-    </div>
-
-      <div class="streamers">
-    <div class="streamer">
-      <a href="https://m.twitch.tv/tlnggarrnet237/home?tt_content=channel&tt_medium=mobile_web_share" target="_blank">
-        <img src="tlnggarrnet237.jpg" alt="TLNG Garrnet">
-      </a>
-    </div>
-
-        <div class="streamers">
-    <div class="streamer">
-      <a href="https://m.twitch.tv/tlnggarrnet237/home?tt_content=channel&tt_medium=mobile_web_share" target="_blank">
-        <img src="tlnggarrnet237.jpg" alt="TLNG Garrnet">
-      </a>
-    </div>
     <!-- Add more streamers here -->
   </div>
 
@@ -171,6 +161,7 @@
 
 </body>
 </html>
+
 
 
 
