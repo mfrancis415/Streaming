@@ -17,58 +17,68 @@
       text-align: center;
       transition: background-color 0.5s ease, color 0.5s ease;
     }
-  h1 {
+
+    h1 {
       font-family: 'Brusher', cursive;
       font-size: 3em;
       margin-top: 20px;
       animation: fadeIn 1s ease-in;
     }
-  .logo {
-  max-height: 80px; /* Adjust as needed */
-  padding: 10px 0;
-  margin-bottom: 10px;
-  text-align: left; /* Ensures left alignment insider the container */
-}
 
-.logo img {
-  max-height: 120px;
-  width: auto;
-  display: block;
-  margin: 0; /*removes auto-centering*/
-}
+    .logo {
+      padding: 10px 20px;
+      text-align: left;
+    }
+
+    .logo img {
+      max-height: 120px;
+      width: auto;
+      display: block;
+    }
 
     .main-stream {
       margin: 20px auto;
       width: 80%;
+      max-width: 854px;
+    }
+
+    .main-stream iframe {
+      width: 100%;
+      height: 480px;
     }
 
     .streamer-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  padding: 20px;
-}
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+    }
 
-.stream-box {
-  width: 300px;
-  background-color: #1e1e1e;
-  border-radius: 10px;
-  padding: 10px;
-  color: #FFD700;
-  font-family: 'Anton', sans-serif;
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
-  transition: transform 0.3s ease;
-}
+    .stream-box {
+      width: 300px;
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      padding: 10px;
+      color: #FFD700;
+      font-family: 'Anton', sans-serif;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
 
-.stream-box:hover {
-  transform: scale(1.03);
-}
+    .stream-box:hover {
+      transform: scale(1.03);
+    }
 
-.stream-box p {
-  margin-top: 10px;
-  font-size: 1em;
-}
+    .stream-box iframe {
+      width: 100%;
+      height: 300px;
+    }
+
+    .stream-box p {
+      margin-top: 10px;
+      font-size: 1em;
+    }
 
     #countdown {
       font-size: 1.2em;
@@ -80,23 +90,40 @@
       to { opacity: 1; }
     }
 
-    @keyframes slideUp {
-      from { transform: translateY(50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2em;
+        margin: 10px 0;
+      }
 
-    @media (max-width: 600px) {
-      .streamers {
+      .logo img {
+        max-height: 80px;
+        width: 100%;
+      }
+
+      .main-stream {
+        width: 95%;
+      }
+
+      .main-stream iframe {
+        height: auto;
+        aspect-ratio: 16 / 9;
+      }
+
+      .streamer-grid {
         flex-direction: column;
         align-items: center;
+        padding: 10px;
       }
-      .streamer {
-        width: 80%;
+
+      .stream-box {
+        width: 90%;
         margin-bottom: 20px;
       }
-      .main-stream iframe {
-        width: 100%;
-        height: auto;
+
+      #countdown {
+        font-size: 1em;
+        padding: 0 10px;
       }
     }
   </style>
@@ -104,8 +131,8 @@
 <body>
 
   <div class="logo">
-  <img src="logo.png" alt="TLNG Logo">
-</div>
+    <img src="logo.png" alt="TLNG Logo">
+  </div>
 
   <div id="countdown"></div>
 
@@ -115,80 +142,61 @@
       src="https://player.twitch.tv/?channel=heatcertifiedtv&parent=mfrancis415.github.io"
       frameborder="0"
       allowfullscreen="true"
-      scrolling="no"
-      height="480"
-      width="854">
+      scrolling="no">
     </iframe>
   </div>
 
- <!-- Streamer Grid -->
-<div class="streamer-grid">
-  <!-- TLNG Garrnet -->
-  <div class="stream-box">
-    <iframe
-      src="https://player.twitch.tv/?channel=tlnggarrnet237&parent=mfrancis415.github.io"
-      frameborder="0"
-      allowfullscreen
-      scrolling="no"
-      height="300"
-      width="100%">
-    </iframe>
-    <p>TLNG Garrnet</p>
-  </div>
+  <!-- Streamer Grid -->
+  <div class="streamer-grid">
+    <div class="stream-box">
+      <iframe
+        src="https://player.twitch.tv/?channel=tlng_garrnet237&parent=mfrancis415.github.io"
+        frameborder="0"
+        allowfullscreen
+        scrolling="no">
+      </iframe>
+      <p>TLNG Garrnet</p>
+    </div>
 
-  <!-- Runlake0507 -->
-  <div class="stream-box">
-    <iframe
-      src="https://player.twitch.tv/?channel=runlake0507&parent=mfrancis415.github.io"
-      frameborder="0"
-      allowfullscreen
-      scrolling="no"
-      height="300"
-      width="100%">
-    </iframe>
-    <p>Runlake0507</p>
-  </div>
+    <div class="stream-box">
+      <iframe
+        src="https://player.twitch.tv/?channel=runlake0507&parent=mfrancis415.github.io"
+        frameborder="0"
+        allowfullscreen
+        scrolling="no">
+      </iframe>
+      <p>Runlake0507</p>
+    </div>
 
-  <!-- SquadUp_23 -->
-  <div class="stream-box">
-    <iframe
-      src="https://player.twitch.tv/?channel=squadup_23&parent=mfrancis415.github.io"
-      frameborder="0"
-      allowfullscreen
-      scrolling="no"
-      height="300"
-      width="100%">
-    </iframe>
-    <p>SquadUp_23</p>
-  </div>
+    <div class="stream-box">
+      <iframe
+        src="https://player.twitch.tv/?channel=squadup_23&parent=mfrancis415.github.io"
+        frameborder="0"
+        allowfullscreen
+        scrolling="no">
+      </iframe>
+      <p>SquadUp_23</p>
+    </div>
 
-  <!-- Placeholder 1 -->
-  <div class="stream-box">
-    <iframe
-      src="https://player.twitch.tv/?channel=placeholder1&parent=mfrancis415.github.io"
-      frameborder="0"
-      allowfullscreen
-      scrolling="no"
-      height="300"
-      width="100%">
-    </iframe>
-    <p>Streamer Placeholder 1</p>
-  </div>
+    <div class="stream-box">
+      <iframe
+        src="https://player.twitch.tv/?channel=placeholder1&parent=mfrancis415.github.io"
+        frameborder="0"
+        allowfullscreen
+        scrolling="no">
+      </iframe>
+      <p>Streamer Placeholder 1</p>
+    </div>
 
-  <!-- Placeholder 2 -->
-  <div class="stream-box">
-    <iframe
-      src="https://player.twitch.tv/?channel=placeholder2&parent=mfrancis415.github.io"
-      frameborder="0"
-      allowfullscreen
-      scrolling="no"
-      height="300"
-      width="100%">
-    </iframe>
-    <p>Streamer Placeholder 2</p>
-  </div>
-</div>
-
+    <div class="stream-box">
+      <iframe
+        src="https://player.twitch.tv/?channel=placeholder2&parent=mfrancis415.github.io"
+        frameborder="0"
+        allowfullscreen
+        scrolling="no">
+      </iframe>
+      <p>Streamer Placeholder 2</p>
+    </div>
   </div>
 
   <script>
@@ -217,16 +225,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
